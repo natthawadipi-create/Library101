@@ -1,0 +1,87 @@
+/* style.css */
+body {
+    font-family: 'Kanit', 'Segoe UI', sans-serif; /* ใช้ฟอนต์ที่อ่านง่าย */
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    color: #1a73e8;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #5f6368;
+    margin-bottom: 2rem;
+}
+
+/* ตกแต่งปุ่ม Confirm */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ส่วนแสดงข้อความแจ้งเตือน */
+#message {
+    margin-top: 1.5rem;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ลิงก์ย้อนกลับ */
+a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

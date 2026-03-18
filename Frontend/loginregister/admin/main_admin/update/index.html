@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - บันทึกการคืนหนังสือ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="admin-container">
+        <div class="card">
+            <h2>↩️ บันทึกการคืนหนังสือ</h2>
+            <p class="subtitle">กรอกข้อมูลการคืนหนังสือให้ครบถ้วนเพื่ออัปเดตระบบ</p>
+
+            <div id="message" class="message-box"></div>
+
+            <div class="form-group">
+                <label for="borrow_id">รหัสการยืม (Borrow ID)</label>
+                <input type="number" id="borrow_id" placeholder="ตัวอย่าง: 101">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="user_id">รหัสผู้ใช้ (User ID)</label>
+                    <input type="number" id="user_id" placeholder="รหัสผู้ยืม">
+                </div>
+                <div class="form-group">
+                    <label for="book_id">รหัสหนังสือ (Book ID)</label>
+                    <input type="number" id="book_id" placeholder="รหัสหนังสือ">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="return_date">วันที่คืนจริง</label>
+                <input type="date" id="return_date">
+            </div>
+
+            <button class="btn-submit" onclick="returnBook()">บันทึกการคืนหนังสือ</button>
+            
+            <div class="footer-link">
+                <a href="../index.html">กลับไปหน้าหลัก</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* ตกแต่ง Card */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f1f3f4;
+    padding-bottom: 15px;
+}
+
+h2 {
+    margin: 0;
+    color: #202124;
+    font-size: 22px;
+}
+
+/* ปุ่มนำทาง (ไปหน้าคืนหนังสือ) */
+.btn-nav {
+    background: none;
+    border: 1px solid #1a73e8;
+    color: #1a73e8;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.btn-nav:hover {
+    background: #f1f6fe;
+}
+
+/* ส่วนแสดงข้อความแจ้งเตือน */
+.message-box {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    min-height: 20px;
+    font-size: 14px;
+}
+
+/* จัดการฟอร์ม */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #5f6368;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background-color: #fff;
+}
+
+/* ปุ่มเพิ่มหนังสือ */
+.btn-add {
+    width: 100%;
+    padding: 14px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.btn-add:hover {
+    background-color: #1765cc;
+    box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
+}
+
+.btn-add:active {
+    transform: translateY(1px);
+}

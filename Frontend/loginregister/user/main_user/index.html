@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>User Library</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>📚 รายการหนังสือ</h2>
+
+
+    <div id="message"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ชื่อหนังสือ</th>
+                <th>สถานะ</th>
+                <th>ยืม</th>
+            </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+    </table>
+
+    <h3>📜 ประวัติการยืม</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID ยืม</th>
+                <th>ชื่อหนังสือ</th>
+                <th>วันที่ยืม</th>
+                <th>กำหนดคืน</th>
+                <th>วันที่คืนจริง</th>
+                <th>สถานะ</th>
+            </tr>
+        </thead>
+        <tbody id="history-list"></tbody> </table>
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>สมัครสมาชิก</h2>
+
+    <div id="message"></div>
+
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="email" name="email" placeholder="Email">
+
+    <select name="role">
+        <option value="">-- เลือก Role --</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button onclick="register()">Register</button>
+
+    <p>มีบัญชีแล้ว? <a href="index_login.html">เข้าสู่ระบบ</a></p>
+</div>
+
+<script src="index_register.js"></script>
+
+</body>
+</html>

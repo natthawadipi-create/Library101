@@ -1,0 +1,122 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* ตกแต่ง Card */
+.card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 0 0 10px 0;
+    color: #1a73e8;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #5f6368;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* ส่วนแสดงข้อความ */
+.message-box {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+/* การจัดการฟอร์ม */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #3c4043;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+}
+
+/* ปุ่มกดยืนยัน */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-link a {
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}

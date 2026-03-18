@@ -1,0 +1,88 @@
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.available {
+    color: green;
+}
+
+.not-available {
+    color: red;
+}
+
+#message {
+    margin-top: 10px;
+}
+/* กล่องแจ้งเตือนรวมด้านบน */
+.message.danger {
+    background-color: #fff3cd; /* สีเหลืองแจ้งเตือน */
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: none; /* ซ่อนไว้ก่อนถ้าไม่มีแจ้งเตือน */
+}
+
+.alert-item {
+    margin-bottom: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(133, 100, 4, 0.1);
+    padding-bottom: 5px;
+}
+
+.alert-item:last-child { border-bottom: none; }
+
+/* สีของข้อความสถานะในตาราง */
+.text-danger { color: #dc3545 !important; }   /* สีแดง */
+.text-warning { color: #fd7e14 !important; }  /* สีส้ม/เหลืองเข้ม */
+.text-success { color: #28a745 !important; }  /* สีเขียว */
+.fw-bold { font-weight: bold; }
+
+/* ไฮไลท์แถวในตารางที่ใกล้กำหนดหรือเกินกำหนด */
+.table-warning {
+    background-color: #fff9e6 !important; /* พื้นหลังเหลืองอ่อน */
+}

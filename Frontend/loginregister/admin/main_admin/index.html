@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - เพิ่มหนังสือใหม่</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="admin-container">
+        <div class="card">
+            <header>
+                <h2>➕ เพิ่มหนังสือใหม่</h2>
+                <button class="btn-nav" onclick="goToReturn()">ไปหน้าคืนหนังสือ ↩️</button>
+            </header>
+
+            <div id="message" class="message-box"></div>
+
+            <div class="form-group">
+                <label for="book_id">รหัสหนังสือ (Book ID)</label>
+                <input type="number" id="book_id" placeholder="ระบุตัวเลขรหัสหนังสือ">
+            </div>
+
+            <div class="form-group">
+                <label for="book_name">ชื่อหนังสือ</label>
+                <input type="text" id="book_name" placeholder="ชื่อหนังสือที่ต้องการเพิ่ม">
+            </div>
+
+            <div class="form-group">
+                <label for="available_quantity">จำนวนคงเหลือ</label>
+                <input type="number" id="available_quantity" placeholder="ระบุจำนวนเล่ม">
+            </div>
+
+            <button class="btn-add" onclick="addBook()">บันทึกข้อมูลหนังสือ</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
