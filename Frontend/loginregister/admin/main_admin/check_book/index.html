@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายการหนังสือ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>📚 รายการหนังสือทั้งหมด</h2>
+
+    <!-- ปุ่มโหลด -->
+    <div class="top-bar">
+        <button onclick="checkBooks()">โหลดข้อมูลหนังสือ</button>
+    </div>
+
+    <!-- ตาราง -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ชื่อหนังสือ</th>
+                <th>จำนวน</th>
+                <th>สถานะ</th>
+            </tr>
+        </thead>
+        <tbody id="book-list">
+            <!-- JS จะเติมข้อมูลตรงนี้ -->
+        </tbody>
+    </table>
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+
+    <script>
+        // โหลดอัตโนมัติเมื่อเปิดหน้า
+        checkBooks();
+    </script>
+
+</body>
+</html>

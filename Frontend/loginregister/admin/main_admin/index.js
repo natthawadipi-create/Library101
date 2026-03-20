@@ -36,3 +36,7 @@ const goToReturn = () => {
 const goToHistory = () => {
     window.location.href = "see_his/index.html";
 };
+
+const booklist = () => {
+    window.location.href = "check_book/index.html";
+}

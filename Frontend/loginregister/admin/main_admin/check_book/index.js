@@ -3,7 +3,7 @@ const BASE_URL = "http://localhost:8000";
 const checkBooks = async () => {
     const bookListDOM = document.getElementById("book-list");
     try{
-        const response = await axios.get(`${BASE_URL}/admins/books_admin`);
+        const response = await axios.get(`${BASE_URL}/admins/books`);
         const books = response.data;
 
         let html = "";
