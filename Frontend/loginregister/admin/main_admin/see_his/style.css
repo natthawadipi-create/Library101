@@ -1,0 +1,84 @@
+/* Reset เบื้องต้น */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* หัวข้อ */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* กล่องค้นหา */
+input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+/* ปุ่ม */
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* จัดกลาง input + ปุ่ม */
+body > input,
+body > button {
+    display: block;
+    margin: 10px auto;
+}
+
+/* ตาราง */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* หัวตาราง */
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ช่องในตาราง */
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* hover แถว */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ทำให้ responsive นิดหน่อย */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    input {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}

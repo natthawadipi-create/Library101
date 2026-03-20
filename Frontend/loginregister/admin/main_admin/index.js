@@ -32,3 +32,7 @@ const addBook = async () => {
 const goToReturn = () => {
     window.location.href = "update/index.html";
 };
+
+const goToHistory = () => {
+    window.location.href = "see_his/index.html";
+};

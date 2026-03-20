@@ -1,5 +1,23 @@
 const BASE_URL = "http://localhost:8000";
 
+const validateData = (returnData) => {
+    let errors = [];
+    if (!returnData.borrow_id) {
+        errors.push('กรุณากรอก borrow_id');
+    }
+    if (!returnData.user_id) {
+        errors.push('กรุณากรอก user_id');
+    }
+    if (!returnData.book_id) {
+        errors.push('กรุณากรอก book_id');
+    }
+    if (!returnData.return_date) {
+        errors.push('กรุณากรอก return_date');
+    }
+    return errors;
+};
+
+
 const returnBook = async () => {
     const borrow_id = document.getElementById("borrow_id").value;
     const user_id = document.getElementById("user_id").value;
@@ -7,6 +25,13 @@ const returnBook = async () => {
     const return_date = document.getElementById("return_date").value;
 
     const messageDOM = document.getElementById("message");
+
+    const errors = validateData({ borrow_id, user_id, book_id, return_date });
+    if (errors.length > 0) {
+        messageDOM.innerText = errors.join(", ");
+        messageDOM.style.color = "red";
+        return;
+    }
 
     try {
         const data = {
@@ -23,7 +48,6 @@ const returnBook = async () => {
 
     } catch (error) {
         console.error(error);
-
         messageDOM.innerText = "เกิดข้อผิดพลาดในการคืนหนังสือ";
         messageDOM.style.color = "red";
 

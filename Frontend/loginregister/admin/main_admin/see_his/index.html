@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow History</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>ดูประวัติการยืมหนังสือ</h2>
+
+    <input type="number" id="user_id" placeholder="กรอก User ID">
+    <button onclick="loadHistory()">ค้นหา</button>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Borrow Date</th>
+                <th>Due Date</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody id="history-list"></tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
