@@ -15,13 +15,11 @@ const validateLogin = (loginData) => {
 };
 
 const login = async () => {
-
     const usernameDOM = document.querySelector('input[name=username]');
     const passwordDOM = document.querySelector('input[name=password]');
     const messageDOM = document.getElementById('message');
 
     try {
-
         const loginData = {
             username: usernameDOM.value,
             password: passwordDOM.value
@@ -43,22 +41,17 @@ const login = async () => {
         messageDOM.innerText = 'Login success';
         messageDOM.className = 'message success';
 
-        // เก็บข้อมูล user
         localStorage.setItem('user', JSON.stringify(user));
-
-        // ตรวจ role เพื่อ redirect
+        
+        setTimeout(() => {
         if (user.role === 'admin') {
-
             window.location.href = 'admin/main_admin/index.html';
-
         } else if (user.role === 'user') {
-
             window.location.href = 'user/main_user/index.html';
-
         }
+        }, 1500);
 
     } catch (error) {
-
         if (error.response) {
             error.message = error.response.data;
             error.errors = [];

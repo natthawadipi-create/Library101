@@ -4,14 +4,11 @@ let bookId = '';
 let userId = '';
 
 window.onload = async () => {
-
-    // ดึง book_id จาก URL
     const urlParams = new URLSearchParams(window.location.search);
     bookId = urlParams.get('book_id');
 
     console.log('bookId', bookId);
 
-    // ดึง user จาก localStorage
     const user = JSON.parse(localStorage.getItem('user'));
 
     if (!user) {
@@ -20,10 +17,9 @@ window.onload = async () => {
         return;
     }
 
-    userId = user.id; // 🔥 สำคัญ
+    userId = user.id; 
 };
 
-// validate
 const validateData = (borrowData) => {
     let errors = [];
 
@@ -42,21 +38,17 @@ const validateData = (borrowData) => {
     return errors;
 };
 
-// submit
 const submitData = async () => {
     let messageDOM = document.getElementById('message');
 
     try {
-        // ดึง user ใหม่ทุกครั้งที่กด เพื่อป้องกันค่าหาย
         const userJson = localStorage.getItem('user');
         const user = userJson ? JSON.parse(userJson) : null;
 
-        // ดึง ID โดยเช็กหลายชื่อ เผื่อ Backend ส่งมาไม่เหมือนกัน
-        // ลองเปลี่ยนเป็น user.user_id หรือ user.id ตามที่ปรากฎใน Database
         const currentUserId = user?.id || user?.user_id || user?.userId;
 
         const borrowData = {
-            user_id: currentUserId, // ใช้ค่าที่ดึงมาใหม่ตรงนี้
+            user_id: currentUserId,
             book_id: Number(bookId),
             borrow_date: new Date().toISOString().split('T')[0]
         };
@@ -82,8 +74,6 @@ const submitData = async () => {
         }, 1500);
 
     } catch (error) {
-        // ส่วนจัดการ Error เหมือนเดิม...
         console.error('Submit Error:', error);
-        // ... โค้ดแสดง error message ของคุณ ...
     }
 };

@@ -8,11 +8,9 @@ if (!user) {
 }
 
 const loadBooks = async () => {
-
     const bookListDOM = document.getElementById("book-list");
 
     try {
-
         const response = await axios.get(`${BASE_URL}/users/books_user`);
         const books = response.data;
 
@@ -49,21 +47,17 @@ const loadBooks = async () => {
 };
 
 const borrowBook = (book_id) => {
-
     window.location.href = `borrow/index.html?book_id=${book_id}`;
-
 };
 
 loadBooks();
 
 const loadHistory = async () => {
-
     const historyDOM = document.getElementById("history-list");
     const messageDOM = document.getElementById("message");
     const user = JSON.parse(localStorage.getItem("user"));
 
     try {
-
         const response = await axios.get(
             `${BASE_URL}/users/borrow_history/${user.user_id}`
         );
@@ -74,22 +68,18 @@ const loadHistory = async () => {
         let alerts = [];
 
         for (let i = 0; i < history.length; i++) {
-
             const record = history[i];
 
-            // --- เช็ก Status ที่มาจาก Backend เพื่อสร้าง Alert ---
             if (record.status === 'Overdue') {
                 alerts.push(`❌ หนังสือ "${record.book_name}" **เกินกำหนดคืนแล้ว!**`);
             } else if (record.status === 'Due Soon') {
                 alerts.push(`⚠️ หนังสือ "${record.book_name}" **ใกล้ครบกำหนดคืน (ภายใน 3 วัน)**`);
             }
 
-            // จัดฟอร์แมตวันที่ให้สวยงาม
             const bDate = new Date(record.borrow_date).toLocaleDateString('th-TH');
             const dDate = new Date(record.due_date).toLocaleDateString('th-TH');
             const rDate = record.return_date ? new Date(record.return_date).toLocaleDateString('th-TH') : "-";
 
-            // กำหนดสี Class ตามสถานะ
             let statusClass = "";
             if (record.status === 'Overdue') statusClass = 'text-danger fw-bold';
             if (record.status === 'Due Soon') statusClass = 'text-warning fw-bold';

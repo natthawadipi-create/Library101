@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:8000";
 
 const addBook = async () => {
-
     const bookIdDOM = document.getElementById("book_id");
     const bookNameDOM = document.getElementById("book_name");
     const quantityDOM = document.getElementById("available_quantity");
@@ -14,7 +13,6 @@ const addBook = async () => {
     };
 
     try {
-
         await axios.post(`${BASE_URL}/admins/books_admin`, bookData);
 
         messageDOM.innerText = "เพิ่มหนังสือสำเร็จ";
@@ -25,7 +23,6 @@ const addBook = async () => {
         quantityDOM.value = "";
 
     } catch (error) {
-
         console.error(error);
 
         messageDOM.innerText = "เกิดข้อผิดพลาดในการเพิ่มหนังสือ";
@@ -33,7 +30,5 @@ const addBook = async () => {
     }
 };
 const goToReturn = () => {
-
     window.location.href = "update/index.html";
-
 };

@@ -12,7 +12,6 @@ const validateRegister = (registerData) => {
 };
 
 const register = async () => {
-
     const usernameDOM = document.querySelector('input[name=username]');
     const passwordDOM = document.querySelector('input[name=password]');
     const emailDOM = document.querySelector('input[name=email]');
@@ -20,7 +19,6 @@ const register = async () => {
     const messageDOM = document.getElementById('message');
 
     try {
-
         const registerData = {
             username: usernameDOM.value,
             password: passwordDOM.value,
@@ -42,13 +40,11 @@ const register = async () => {
         messageDOM.innerText = 'Register success';
         messageDOM.className = 'message success';
 
-        // สมัครเสร็จ → ไปหน้า login
         setTimeout(() => {
             window.location.href = 'index_login.html';
         }, 1500);
 
     } catch (error) {
-
         let msg = error.message || 'เกิดข้อผิดพลาด';
 
         if (error.errors) {
