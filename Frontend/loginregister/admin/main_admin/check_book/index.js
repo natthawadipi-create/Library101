@@ -10,9 +10,7 @@ const checkBooks = async () => {
         bookListDOM.innerHTML = "";
 
         books.forEach(book => {
-            const statusText = book.available_quantity > 0 
-                ? "พร้อมยืม" 
-                : "ไม่พร้อมยืม";
+            const statusText = book.borrow_status;
 
             const row = `
                 <tr>

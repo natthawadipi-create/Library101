@@ -3,10 +3,18 @@ const BASE_URL = 'http://localhost:8000';
 const validateRegister = (registerData) => {
     let errors = [];
 
-    if (!registerData.username) errors.push('กรุณากรอก Username');
-    if (!registerData.password) errors.push('กรุณากรอก Password');
-    if (!registerData.email) errors.push('กรุณากรอก Email');
-    if (!registerData.role) errors.push('กรุณาเลือก Role');
+    if (!registerData.username){
+        errors.push('กรุณากรอก Username');
+    }
+    if (!registerData.password){
+        errors.push('กรุณากรอก Password');
+    }
+    if (!registerData.email){
+        errors.push('กรุณากรอก Email');
+    }
+    if (!registerData.role){
+        errors.push('กรุณาเลือก Role');
+    }
 
     return errors;
 };
@@ -46,7 +54,6 @@ const register = async () => {
 
     } catch (error) {
         let msg = error.message || 'เกิดข้อผิดพลาด';
-
         if (error.errors) {
             msg += '\n' + error.errors.join('\n');
         }

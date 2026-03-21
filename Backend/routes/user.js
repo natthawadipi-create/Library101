@@ -27,7 +27,9 @@ router.post('/borrow', async (req, res) => {
 
     try {
         const [books] = await req.conn.query(
-            'SELECT available_quantity FROM Books WHERE book_id = ?',
+            `SELECT available_quantity 
+            FROM Books 
+            WHERE book_id = ?`,
             [book_id]
         );
 
@@ -42,15 +44,22 @@ router.post('/borrow', async (req, res) => {
         const due_date = new Date(borrow_date);
         due_date.setDate(due_date.getDate() + 14);
 
-        await req.conn.query(`INSERT INTO Borrow (borrow_date, due_date, return_date, user_id, book_id)
-             VALUES (?, ?, NULL, ?, ?)`,
-             [borrow_date, due_date, user_id, book_id]);
+        await req.conn.query(`
+            INSERT INTO Borrow (borrow_date, due_date, return_date, user_id, book_id) 
+            VALUES (?, ?, NULL, ?, ?)`,
+            [borrow_date, due_date, user_id, book_id]);
 
-        await req.conn.query(`UPDATE Books SET available_quantity = available_quantity - 1 WHERE book_id = ?`,
+        await req.conn.query(`
+            UPDATE Books 
+            SET available_quantity = available_quantity - 1 
+            WHERE book_id = ?`,
             [book_id]);
 
-        await req.conn.query(`UPDATE Books SET status = 'not available' 
-            WHERE book_id = ? AND available_quantity = 0`,
+        await req.conn.query(`
+            UPDATE Books 
+            SET status = 'not available' 
+            WHERE book_id = ? 
+            AND available_quantity = 0`,
             [book_id]);
 
         res.send('Borrow successful');

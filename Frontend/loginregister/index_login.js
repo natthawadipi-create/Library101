@@ -6,7 +6,6 @@ const validateLogin = (loginData) => {
     if (!loginData.username) {
         errors.push('กรุณากรอก Username');
     }
-
     if (!loginData.password) {
         errors.push('กรุณากรอก Password');
     }
@@ -35,7 +34,6 @@ const login = async () => {
         }
 
         const response = await axios.post(`${BASE_URL}/both/login`, loginData);
-
         const user = response.data.user;
 
         messageDOM.innerText = 'Login success';

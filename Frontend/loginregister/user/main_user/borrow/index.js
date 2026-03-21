@@ -26,11 +26,9 @@ const validateData = (borrowData) => {
     if (!borrowData.user_id) {
         errors.push('ไม่พบ user');
     }
-
     if (!borrowData.book_id) {
         errors.push('ไม่พบหนังสือ');
     }
-
     if (!borrowData.borrow_date) {
         errors.push('ไม่พบวันที่ยืม');
     }

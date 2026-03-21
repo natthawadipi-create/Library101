@@ -17,12 +17,11 @@ const validateData = (returnData) => {
     return errors;
 };
 
-
 const returnBook = async () => {
-    const borrow_id = document.getElementById("borrow_id").value;
-    const user_id = document.getElementById("user_id").value;
-    const book_id = document.getElementById("book_id").value;
-    const return_date = document.getElementById("return_date").value;
+    const borrow_id = document.getElementById("borrow_id");
+    const user_id = document.getElementById("user_id");
+    const book_id = document.getElementById("book_id");
+    const return_date = document.getElementById("return_date");
 
     const messageDOM = document.getElementById("message");
 
@@ -35,10 +34,10 @@ const returnBook = async () => {
 
     try {
         const data = {
-            borrow_id: borrow_id,
-            user_id: user_id,
-            book_id: book_id,
-            return_date: return_date
+            borrow_id: borrow_id.value,
+            user_id: user_id.value,
+            book_id: book_id.value,
+            return_date: return_date.value
         };
 
         const response = await axios.put(`${BASE_URL}/admins/return`, data);
